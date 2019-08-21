@@ -1,0 +1,77 @@
+public class Main {
+
+    public static String getUniqueWords (String str) {
+
+        StringBuilder sb = new StringBuilder();
+        int count = 0;
+
+        String[] words = str.toLowerCase().split("\\s+");
+        for (int i = 0; i < words.length; i++) {
+            words[i] = words[i].replaceAll("[^\\w \\']", "");
+        }
+
+        for (int j = 0; j < words.length; j++) {
+            for (int k = 0; k < words.length; k++) {
+                if (words[j].compareTo(words[k]) == 0) {
+                    count++;
+                }
+            }
+            if(count == 1) sb.append(words[j]).append(", "); 
+            count = 0;
+        }
+
+        return sb.toString();
+    }
+
+    static String Nirvana = "Load up on guns, bring your friends\n" +
+            "It's fun to lose and to pretend\n" +
+            "She's over-bored and self-assured\n" +
+            "Oh no, I know a dirty word\n" +
+            "Hello, hello, hello, how low\n" +
+            "Hello, hello, hello, how low\n" +
+            "Hello, hello, hello, how low\n" +
+            "Hello, hello, hello\n" +
+            "With the lights out, it's less dangerous\n" +
+            "Here we are now, entertain us\n" +
+            "I feel stupid and contagious\n" +
+            "Here we are now, entertain us\n" +
+            "A mulatto, an albino, a mosquito, my libido\n" +
+            "Yeah, hey\n" +
+            "I'm worse at what I do best\n" +
+            "And for this gift I feel blessed\n" +
+            "Our little group has always been\n" +
+            "And always will until the end\n" +
+            "Hello, hello, hello, how low\n" +
+            "Hello, hello, hello, how low\n" +
+            "Hello, hello, hello, how low\n" +
+            "Hello, hello, hello\n" +
+            "With the lights out, it's less dangerous\n" +
+            "Here we are now, entertain us\n" +
+            "I feel stupid and contagious\n" +
+            "Here we are now, entertain us\n" +
+            "A mulatto, an albino, a mosquito, my libido\n" +
+            "Yeah, hey\n" +
+            "And I forget just why I taste\n" +
+            "Oh yeah, I guess it makes me smile\n" +
+            "I found it hard, it's hard to find\n" +
+            "Oh well, whatever, never mind\n" +
+            "Hello, hello, hello, how low\n" +
+            "Hello, hello, hello, how low\n" +
+            "Hello, hello, hello, how low\n" +
+            "Hello, hello, hello\n" +
+            "With the lights out, it's less dangerous\n" +
+            "Here we are now, entertain us\n" +
+            "I feel stupid and contagious\n" +
+            "Here we are now, entertain us\n" +
+            "A mulatto, an albino, a mosquito, my libido\n" +
+            "A denial, a denial, a denial, a denial, a denial\n" +
+            "A denial, a denial, a denial, a denial";
+
+    public static String test5 = "1 1 1 2 a a bb bb 55 unique notUnique, notUnique, notUnique, ll, ll ll; ooo oo";
+
+    public static void main(String[] args) {
+
+        System.out.println("getUniqueWords(Nirvana) = " + getUniqueWords(Nirvana));
+        System.out.println("getUniqueWords(test5) = " + getUniqueWords(test5));
+    }
+}
