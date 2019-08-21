@@ -1,0 +1,12 @@
+public class Main {
+
+    public static int factorial (int num) {
+        return num == 0 ? 1 : num * factorial(num-1);
+    }
+
+    public static void main(String[] args) {
+
+        System.out.println("factorial(4) = " + factorial(4));
+        System.out.println("factorial(6) = " + factorial(6));
+    }
+}
